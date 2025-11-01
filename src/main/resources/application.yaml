@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: springbootapp
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+info:
+  app:
+    name: "@project.artifactId@"
+    version: "@project.version@"
+    description: "@project.description@"
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      version: "@java.version@"
+  build:
+    artifact: "@project.artifactId@"
+    name: "@project.name@"
+    version: "@project.version@"
+    time: "${maven.build.timestamp}"
+  custom:
+    message: "Это мой первый Spring Boot проект!"
+    status: "ACTIVE"
